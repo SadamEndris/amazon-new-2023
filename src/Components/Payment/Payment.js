@@ -12,12 +12,19 @@ const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const navigate = useNavigate();
 
+  // 111
   const stripe = useStripe();
   const elements = useElements();
+
+  // 112
+  // states use for the button
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
+  // conditions to diable the button
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
+
+  // finding client secret
   const [clientSecret, setClientSecret] = useState(true);
 
   //  generate the special stripe seceret which allows us to charge a customer
@@ -45,44 +52,53 @@ const Payment = () => {
 
   // The useEffect hook is set up to run whenever the basket prop changes. This means that when the basket prop is updated, it will trigger a new request to /payments/create to fetch the updated client secret.
 
+  // The function uses the reduce method to iterate over the items in the basket and sum their prices.
   const getBasketTotal = (basket) =>
     basket?.reduce((amount, item) => item.price + amount, 0);
 
-  // The function uses the reduce method to iterate over the items in the basket and sum their prices.
-
+  // for form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    const payload = await stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-        },
-      })
-      .then(({ paymentIntent }) => {
-        console.log(paymentIntent);
+    try {
+      const payload = await stripe
+        .confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: elements.getElement(CardElement),
+          },
+        })
+        .then(({ paymentIntent }) => {
+          //paymentIntent == payment confirmation
+          console.log(paymentIntent);
 
-        db.collection("users")
-          .doc(user?.uid)
-          .collection("orders")
-          .doc(paymentIntent.id)
-          .set({
-            basket: basket,
-            amount: paymentIntent.amount,
-            created: paymentIntent.created,
+          db.collection("users")
+            .doc(user?.uid)
+            .collection("orders")
+            .doc(paymentIntent.id)
+            .set({
+              basket: basket,
+              amount: paymentIntent.amount,
+              created: paymentIntent.created,
+            });
+          console.log(paymentIntent);
+
+          setSucceeded(true);
+          setError(null);
+          setProcessing(false);
+
+          // to make the basket null
+          dispatch({
+            type: "EMPTY_BASKET",
           });
-        console.log(paymentIntent);
-        setSucceeded(true);
-        setError(null);
-        setProcessing(false);
-        // to make the basket null
-        dispatch({
-          type: "EMPTY_BASKET",
-        });
 
-        navigate("/orders");
-      });
+          navigate("/orders");
+        });
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  // for cardelement
   const handleChange = (event) => {
     //listen for changes in the CardElement
     //and display any errors as the customer types their card details
@@ -144,7 +160,7 @@ const Payment = () => {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-                <button disabledPh={processing || disabled || succeeded}>
+                <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>

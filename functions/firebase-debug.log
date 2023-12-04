@@ -1,0 +1,98 @@
+[debug] [2023-11-16T07:40:22.706Z] ----------------------------------------------------------------------
+[debug] [2023-11-16T07:40:22.711Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-11-16T07:40:22.712Z] CLI Version:   12.6.2
+[debug] [2023-11-16T07:40:22.712Z] Platform:      win32
+[debug] [2023-11-16T07:40:22.712Z] Node Version:  v18.15.0
+[debug] [2023-11-16T07:40:22.713Z] Time:          Thu Nov 16 2023 10:40:22 GMT+0300 (East Africa Time)
+[debug] [2023-11-16T07:40:22.713Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-16T07:40:22.721Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-11-16T07:40:22.877Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-16T07:40:22.883Z] > authorizing via signed-in user (sadamendris48@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-11-16T07:40:22.899Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-16T07:40:22.900Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-11-16T07:40:22.911Z] [hub] writing locator at C:\Users\sadam\AppData\Local\Temp\hub-new-a8a56.json
+[debug] [2023-11-16T07:40:22.946Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-16T07:40:22.946Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-11-16T07:40:22.946Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-11-16T07:40:22.949Z] defaultcredentials: writing to file C:\Users\sadam\AppData\Roaming\firebase\sadamendris48_gmail_com_application_default_credentials.json
+[debug] [2023-11-16T07:40:22.952Z] Setting GAC to C:\Users\sadam\AppData\Roaming\firebase\sadamendris48_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\sadam\\AppData\\Roaming\\firebase\\sadamendris48_gmail_com_application_default_credentials.json"}}
+[debug] [2023-11-16T07:40:22.953Z] > refreshing access token with scopes: []
+[debug] [2023-11-16T07:40:22.953Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-11-16T07:40:22.954Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-16T07:40:25.006Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-11-16T07:40:25.007Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-16T07:40:25.014Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/new-a8a56/adminSdkConfig [none]
+[debug] [2023-11-16T07:40:25.385Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-11-16T07:40:25.386Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-11-16T07:40:27.723Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/new-a8a56/adminSdkConfig 200
+[debug] [2023-11-16T07:40:27.724Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/new-a8a56/adminSdkConfig {"projectId":"new-a8a56","storageBucket":"new-a8a56.appspot.com"}
+[debug] [2023-11-16T07:40:27.758Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-11-16T07:40:27.758Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-11-16T07:40:27.758Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\sadam\\.cache\\firebase\\emulators\\ui-v1.11.7\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\sadam\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.7\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-11-16T07:40:28.016Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-11-16T07:40:28.017Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Users\sadam\Downloads\Documents\Document-from-old-Desktop\new-amazon\my-app\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\sadam\\Downloads\\Documents\\Document-from-old-Desktop\\new-amazon\\my-app\\functions\" for Cloud Functions..."}}
+[debug] [2023-11-16T07:40:28.051Z] Validating nodejs source
+[warn] !  functions: Couldn't find firebase-functions package in your source code. Have you run 'npm install'? 
+[debug] [2023-11-16T07:40:28.052Z] getFunctionsSDKVersion encountered error: Cannot find module 'firebase-functions'
+Require stack:
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\versioning.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\runtimes\node\index.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\runtimes\index.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\gcp\cloudfunctions.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\backend.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorShared.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulator.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\controller.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\commandUtils.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\database-get.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\index.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\index.js
+- C:\Users\sadam\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js {"code":"MODULE_NOT_FOUND","requireStack":["C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\deploy\\functions\\runtimes\\node\\versioning.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\deploy\\functions\\runtimes\\node\\index.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\deploy\\functions\\runtimes\\index.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\gcp\\cloudfunctions.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\deploy\\functions\\backend.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorShared.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulator.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\emulator\\controller.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\emulator\\commandUtils.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\commands\\database-get.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\commands\\index.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\index.js","C:\\Users\\sadam\\AppData\\Roaming\\npm\\node_modules\\firebase-tools\\lib\\bin\\firebase.js"]}
+[debug] [2023-11-16T07:40:28.053Z] checkFunctionsSDKVersion encountered error: Invalid Version:  {}
+[debug] [2023-11-16T07:40:28.054Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {},
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "stripe": "^13.9.0"
+  },
+  "private": true
+}
+[debug] [2023-11-16T07:40:28.054Z] Building nodejs source
+[debug] [2023-11-16T07:40:28.055Z] Failed to find version of module node: reached end of search path C:\Users\sadam\Downloads\Documents\Document-from-old-Desktop\new-amazon\my-app\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-11-16T07:40:28.059Z] Could not parse firebase-functions version '' into semver. Falling back to parseTriggers.
+[info] +  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-11-16T08:00:19.943Z] File C:\Users\sadam\Downloads\Documents\Document-from-old-Desktop\new-amazon\my-app\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\sadam\\Downloads\\Documents\\Document-from-old-Desktop\\new-amazon\\my-app\\functions\\index.js changed, reloading triggers"}}
+[debug] [2023-11-16T08:00:20.016Z] Received signal SIGHUP 1
