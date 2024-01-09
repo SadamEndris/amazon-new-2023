@@ -1,14 +1,14 @@
-import React from 'react'
-import './Subtotal.css'
-import CurrencyFormat from 'react-currency-format'
-import { useStateValue } from '../contexts/StateProvider'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import "./Subtotal.css";
+import CurrencyFormat from "react-currency-format";
+import { useStateValue } from "../contexts/StateProvider";
+import { useNavigate } from "react-router-dom";
 
 function Subtotal() {
-  const [{ basket }] = useStateValue()
-  const navigate = useNavigate()
+  const [{ basket }] = useStateValue();
+  const navigate = useNavigate();
   const getBasketTotal = (basket) =>
-    basket?.reduce((amount, item) => item.price + amount, 0)
+    basket?.reduce((amount, item) => item.price + amount, 0);
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -24,13 +24,13 @@ function Subtotal() {
         )}
         decimalScale={2}
         value={getBasketTotal(basket)}
-        displayType={'text'}
+        displayType={"text"}
         thousandSeparator={true}
-        prefix={'$'}
+        prefix={"$"}
       />
-      <button onClick={(e) => navigate('/payment')}>Proceed to Checkout</button>
+      <button onClick={(e) => navigate("/payment")}>Proceed to Checkout</button>
     </div>
-  )
+  );
 }
 
-export default Subtotal
+export default Subtotal;

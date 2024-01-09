@@ -1,11 +1,10 @@
-import React from 'react'
-import CheckProduct from '../CheckProduct/CheckProduct'
-import { useStateValue } from '../contexts/StateProvider'
-// import Subtotal from '../Subtotal/Subtotal'
-import './Checkout.css'
-import Subtotal from '../Subtotal/Subtotal'
+import React from "react";
+import CheckProduct from "../CheckProduct/CheckProduct";
+import { useStateValue } from "../contexts/StateProvider";
+import "./Checkout.css";
+import Subtotal from "../Subtotal/Subtotal";
 function Checkout() {
-  const [{ basket }] = useStateValue()
+  const [{ basket }] = useStateValue();
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -30,7 +29,7 @@ function Checkout() {
         <Subtotal />
       </div>
     </div>
-  )
+  );
 }
 
-export default Checkout
+export default Checkout;

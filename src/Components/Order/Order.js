@@ -8,7 +8,7 @@ const Order = ({ order }) => {
   return (
     <div className="order">
       <h2>Order</h2>
-      {/* {console.log(order)} */}
+      {console.log(order)}
       <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
       <p className="order__id">
         <small>{order.id}</small>

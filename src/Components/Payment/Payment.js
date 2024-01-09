@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Payment.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useStateValue } from "../contexts/StateProvider";
 import CheckProduct from "../CheckProduct/CheckProduct";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
@@ -10,7 +10,7 @@ import { db } from "../../firebase";
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
   // 111
   const stripe = useStripe();
@@ -60,42 +60,40 @@ const Payment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setProcessing(true);
-    try {
-      const payload = await stripe
-        .confirmCardPayment(clientSecret, {
-          payment_method: {
-            card: elements.getElement(CardElement),
-          },
-        })
-        .then(({ paymentIntent }) => {
-          //paymentIntent == payment confirmation
-          console.log(paymentIntent);
-
-          db.collection("users")
-            .doc(user?.uid)
-            .collection("orders")
-            .doc(paymentIntent.id)
-            .set({
-              basket: basket,
-              amount: paymentIntent.amount,
-              created: paymentIntent.created,
-            });
-          console.log(paymentIntent);
-
-          setSucceeded(true);
-          setError(null);
-          setProcessing(false);
-
-          // to make the basket null
-          dispatch({
-            type: "EMPTY_BASKET",
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      })
+      .then(({ paymentIntent }) => {
+        //paymentIntent == payment confirmation
+        console.log(paymentIntent);
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
           });
+        console.log(paymentIntent);
 
-          navigate("/orders");
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        // to make the basket null
+        dispatch({
+          type: "EMPTY_BASKET",
         });
-    } catch (err) {
-      console.log(err);
-    }
+
+        Navigate("/orders");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   // for cardelement

@@ -37,7 +37,7 @@ app.post("/payments/create", async (request, response) => {
 });
 // Listen command
 // exports.api = functions.https.onRequest(app);
-app.listen(5500, (error) => {
-  if (!error) console.log("server is listening on port 5500");
+app.listen(10000, (error) => {
+  if (!error) console.log("server is listening on port 10000");
 });
 // http://127.0.0.1:5001/new-a8a56/us-central1/api

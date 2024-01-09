@@ -9,7 +9,7 @@ function CheckProduct({ id, image, title, price, rating, hideButton }) {
       id: id,
     });
   };
-  return ( 
+  return (
     <div className="checkoutProduct">
       <img className="checkoutProduct_image" src={image} alt="" />
       <div className="checkoutProduct_info">
